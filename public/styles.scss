@@ -1,0 +1,43 @@
+* {
+  user-select: none;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+  max-width: 400px;
+  margin: 100px auto 0 auto;
+  padding: 30px 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  .title {
+    margin: 10px auto;
+  }
+  .input {
+    margin-bottom: 20px;
+  }
+  .list {   
+    width: 80%;
+    margin: 0 auto;
+    list-style-type: none;
+    padding: 0;
+  }
+  .list-element {
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+}
+
+.crossed {
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: line-through;
+}

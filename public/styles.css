@@ -1,0 +1,55 @@
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 400px;
+  margin: 100px auto 0 auto;
+  padding: 30px 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.container .title {
+  margin: 10px auto;
+}
+
+.container .input {
+  margin-bottom: 20px;
+}
+
+.container .list {
+  width: 80%;
+  margin: 0 auto;
+  list-style-type: none;
+  padding: 0;
+}
+
+.container .list-element {
+  margin: 10px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+}
+
+.crossed {
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: line-through;
+}
+/*# sourceMappingURL=styles.css.map */
