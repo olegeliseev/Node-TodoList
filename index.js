@@ -84,24 +84,24 @@ app.route("/api/todos/:todoId")
 
 //Update specific todo
 .put(function(req, res) {
-    Todo.findOneAndUpdate({_id: req.params.todoId}, req.body, {new: true})
-    .then(function(todo) {
-        res.json(todo);
-    })
-    .catch(function(err) {
-        res.send(`Something went wrong: ${err}`);
-    })
+    Todo.findOneAndUpdate({ _id: req.params.todoId }, req.body, { new: true })
+        .then(function(todo) {
+            res.json(todo);
+        })
+        .catch(function(err) {
+            res.send(`Something went wrong: ${err}`);
+        })
 })
 
 //Delete specific todo
-.delete(function(req,res) {
+.delete(function(req, res) {
     Todo.deleteOne({ _id: req.params.todoId })
-    .then(function() {
-        res.send("Todo deleted successfully");
-    })
-    .catch(function(err) {
-        res.send(`Something went wrong: ${err}`);
-    })
+        .then(function() {
+            res.send("Todo deleted successfully");
+        })
+        .catch(function(err) {
+            res.send(`Something went wrong: ${err}`);
+        })
 })
 
 
