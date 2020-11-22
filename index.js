@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/views'));
 
-// ============================ MONGO CONNECTION AND SCHEMA ============================
+// ============================ Подсоединение Монго ============================
 
 mongoose.set("debug", true);
 mongoose.Promise = Promise; //Позволяет использовать промисы с методами монго
@@ -32,7 +32,7 @@ const todoSchema = new mongoose.Schema({
     },
     create_date: {
         type: Date,
-        default: Date.now
+        default: new Date()
     }
 })
 

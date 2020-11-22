@@ -3,38 +3,72 @@
 }
 
 body {
+  padding: 0;
+  margin: 0;
   font-family: sans-serif;
+  background: linear-gradient(#e66465, #9198e5);
+  background-repeat: no-repeat;
+  height: 100vh;
+  // position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .container {
-  max-width: 400px;
-  margin: 100px auto 0 auto;
+  background-color: #fff;
+  width: 500px;
+  // margin: 100px auto 0 auto;
   padding: 30px 10px;
-  border: 1px solid black;
+  // border: 1px solid black;
   border-radius: 10px;
   text-align: center;
+  box-shadow: 2px 2px 2px black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   .title {
     margin: 10px auto;
   }
   .input {
+    width: 70%;
     margin-bottom: 20px;
   }
-  .list {   
+  .list {
     width: 80%;
     margin: 0 auto;
     list-style-type: none;
     padding: 0;
+    text-align: left;
   }
   .list-element {
     margin: 10px auto;
-    display: flex;
-    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 5px;
     cursor: pointer;
+    .list-content {
+      overflow-wrap: break-word;
+    }
+    .list-date {
+      font-size: 12px;
+    }
+    .delete-button {
+      float: right;
+    }
   }
+}
+
+.description {
+  margin-top: 30px;
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 30%);
 }
 
 .crossed {

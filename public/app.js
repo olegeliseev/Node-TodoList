@@ -1,10 +1,10 @@
 $(document).ready(function() {
-    //Display all todos
+    //Получить все элементы списка
     $.getJSON("api/todos")
         .then(displayTodos)
         .catch(err => console.log(err));
 
-    //Add todo when Add button is clicked
+    //Добавить элемент при нажатии на кнопку Add
     $(".add-button").on("click", function(e) {
         e.preventDefault();
         let inputVal = $(".input").val();
@@ -14,16 +14,31 @@ $(document).ready(function() {
         return;
     })
 
-    //Delete todo when X button is clicked
+    //Удалить элемент при нажатии на кнопку X
     $(".list").on("click", ".delete-button", function() {
         deleteTodo($(this).parent());
     });
 
-    // Toggle cross on todo when li is clicked
+    //Переключать класс с зачеркиванием при нажатии на сам элемент
     $(".list").on("click", ".list-element", function() {
         updateTodo($(this));
     })
-})
+
+    //Отображение даты и времени
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
+    const currentDate = new Date();
+    const currentDay = currentDate.getDate();
+    const currentMonth = monthNames[currentDate.getMonth()];
+    const currentYear = currentDate.getFullYear();
+    const currentTime = currentDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+    
+    $(".date-day").append(currentDay);
+    $(".date-month_year").append(`${currentMonth} ${currentYear}`);
+    $(".date-time").append(currentTime);
+});
 
 //Get all todos from database and append on list
 function displayTodos(todos) {
@@ -33,12 +48,19 @@ function displayTodos(todos) {
 }
 
 function appendTodo(todo) {
-    const newTodo = $(`<li class="list-element"><span>${todo.name}</span> <button class="delete-button">X</button></li>`);
+    const newTodo = 
+    $(`<li class="list-element">
+            <span class="list-content">
+                ${todo.name}
+            </span>
+            <button class="delete-button">X</button>
+        </li>`);
+    //Присвоение объекта к элементу DOM-дерева
     newTodo.data("id", todo._id);
     newTodo.data("completed", todo.completed);
-    if(todo.completed){
+    if (todo.completed) {
         newTodo.addClass("crossed");
-      }
+    }
     $(".list").append(newTodo);
 }
 
@@ -59,7 +81,7 @@ function deleteTodo(todo) {
             url: deleteUrl
         })
         .then(function() {
-            todo.remove();
+            todo.fadeOut();
         })
         .catch(function(err) {
             console.log(err);
