@@ -24,20 +24,12 @@ $(document).ready(function() {
         updateTodo($(this));
     })
 
-    //Отображение даты и времени
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-    ];
+    // Отображение даты и времени
+    createDate();
 
-    const currentDate = new Date();
-    const currentDay = currentDate.getDate();
-    const currentMonth = monthNames[currentDate.getMonth()];
-    const currentYear = currentDate.getFullYear();
-    const currentTime = currentDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-    
-    $(".date-day").append(currentDay);
-    $(".date-month_year").append(`${currentMonth} ${currentYear}`);
-    $(".date-time").append(currentTime);
+    setInterval(function() {
+        updateTime();
+    }, 1000);
 });
 
 //Get all todos from database and append on list
@@ -102,4 +94,24 @@ function updateTodo(todo) {
             todo.data("completed", !isDone);
         })
         .catch(err => console.log(err));
+}
+
+//Отображение даты и времени
+const monthNames = ["January", "February", "March", "April", "May", "June",
+"July", "August", "September", "October", "November", "December"
+];
+
+function createDate() {
+    const currentDate = new Date();
+    const currentDay = currentDate.getDate();
+    const currentMonth = monthNames[currentDate.getMonth()];
+    const currentYear = currentDate.getFullYear();
+    const currentTime = currentDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: "numeric", hour12: true });
+    $(".date-day").text(currentDay);
+    $(".date-month_year").text(`${currentMonth} ${currentYear}`);
+    $(".date-time").text(currentTime);
+}
+
+function updateTime() {
+    createDate();
 }

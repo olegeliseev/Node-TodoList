@@ -1,25 +1,62 @@
 * {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
-  padding: 0;
-  margin: 0;
-  font-family: sans-serif;
-  background: -webkit-gradient(linear, left top, left bottom, from(#e66465), to(#9198e5));
-  background: linear-gradient(#e66465, #9198e5);
-  background-repeat: no-repeat;
   height: 100vh;
+  margin: 0;
+  padding-top: 40px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4ceddb), to(transparent));
+  background: linear-gradient(#4ceddb, transparent);
+  background-repeat: no-repeat;
+}
+
+.container .form .add-button, .container .list .list-element .delete-button {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.container {
+  max-width: 562px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.container .title {
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 20px auto;
+  color: #187a6f;
+}
+
+.container .title span {
+  font-weight: 900;
+}
+
+.container .subtitle {
+  color: #187a6f;
+  font-weight: 300;
+  font-size: 1.125rem;
+}
+
+.container .date {
+  color: #fff;
+  background-color: #187a6f;
+  max-width: 220px;
+  height: 70px;
+  margin: 30px auto;
+  border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -28,70 +65,116 @@ body {
           align-items: center;
 }
 
-button {
-  cursor: pointer;
+.container .date .date-day {
+  font-size: 2.5rem;
+  margin-right: 15px;
 }
 
-.container {
-  background-color: #fff;
-  width: 500px;
-  padding: 30px 10px;
-  border-radius: 10px;
-  text-align: center;
-  -webkit-box-shadow: 2px 2px 2px black;
-          box-shadow: 2px 2px 2px black;
+.container .date .date-content {
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.container .form {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.container .form .input {
+  width: 100%;
+  height: 40px;
+  border: 2px solid #187a6f;
+  border-radius: 5px;
+  padding-left: 10px;
+  outline: none;
+}
+
+.container .form .input::-webkit-input-placeholder {
+  color: #187a6f;
+  opacity: 50%;
+}
+
+.container .form .input:-ms-input-placeholder {
+  color: #187a6f;
+  opacity: 50%;
+}
+
+.container .form .input::-ms-input-placeholder {
+  color: #187a6f;
+  opacity: 50%;
+}
+
+.container .form .input::placeholder {
+  color: #187a6f;
+  opacity: 50%;
+}
+
+.container .form .add-button {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  right: -14px;
+  top: 4px;
+  font-size: 1.25rem;
+  background-color: #ffaf1c;
 }
 
-.container .title {
-  margin: 10px auto;
-}
-
-.container .input {
-  width: 70%;
-  margin-bottom: 20px;
+.container hr {
+  border: none;
+  border-top: 1px solid #187a6f;
+  opacity: 50%;
+  max-width: 80%;
+  margin: 20px auto;
 }
 
 .container .list {
-  width: 80%;
-  margin: 0 auto;
-  list-style-type: none;
+  list-style: none;
   padding: 0;
+  margin: 0 auto;
+  max-width: 80%;
   text-align: left;
 }
 
-.container .list-element {
-  margin: 10px auto;
-  border: 1px solid black;
+.container .list .list-element {
+  min-height: 50px;
+  border: 2px solid #187a6f;
+  background-color: #fff;
   border-radius: 5px;
-  padding: 10px 5px;
+  margin: 10px auto;
+  padding: 0 10px;
+  outline: none;
   cursor: pointer;
 }
 
-.container .list-element .list-content {
-  overflow-wrap: break-word;
+.container .list .list-element .list-content {
+  line-height: 50px;
+  word-wrap: break-word;
 }
 
-.container .list-element .list-date {
-  font-size: 12px;
-}
-
-.container .list-element .delete-button {
+.container .list .list-element .delete-button {
   float: right;
+  font-size: 0.8rem;
+  background-color: #d11b29;
+  position: relative;
+  left: 26px;
+  top: 8px;
 }
 
 .description {
-  margin-top: 30px;
-  font-size: 0.7rem;
-  color: black;
+  text-align: center;
+  color: #187a6f;
+  margin: 40px auto;
+  text-decoration: none;
+}
+
+.description > a {
+  color: #187a6f;
+  font-weight: 900;
+  text-decoration: none;
 }
 
 .crossed {
   color: rgba(0, 0, 0, 0.5);
   text-decoration: line-through;
+  opacity: 50%;
 }
 /*# sourceMappingURL=styles.css.map */

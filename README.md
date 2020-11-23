@@ -1,1 +1,1 @@
-# Todo List using Node.js, MongoDB and Jquery
+# Список дел с использованем Node.js, MongoDB и jQuery

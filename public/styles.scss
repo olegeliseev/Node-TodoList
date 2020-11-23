@@ -1,77 +1,150 @@
+@import "variables";
+
 * {
-  user-select: none;
+  box-sizing: border-box;
 }
 
 body {
-  padding: 0;
-  margin: 0;
-  font-family: sans-serif;
-  background: linear-gradient(#e66465, #9198e5);
-  background-repeat: no-repeat;
   height: 100vh;
-  // position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: 0;
+  padding-top: 40px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background: linear-gradient($background-color, transparent);
+  background-repeat: no-repeat;
 }
 
-button {
+%button {
   cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
 }
 
 .container {
-  background-color: #fff;
-  width: 500px;
-  // margin: 100px auto 0 auto;
-  padding: 30px 10px;
-  // border: 1px solid black;
-  border-radius: 10px;
+  max-width: 562px;
+  margin: 0 auto;
   text-align: center;
-  box-shadow: 2px 2px 2px black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+
   .title {
-    margin: 10px auto;
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 20px auto;
+    color: $primary-color;
+    span {
+      font-weight: 900;
+    }
   }
-  .input {
-    width: 70%;
-    margin-bottom: 20px;
+
+  .subtitle {
+    color: $primary-color;
+    font-weight: 300;
+    font-size: 1.125rem;
   }
-  .list {
+
+  .date {
+    color: #fff;
+    background-color: $primary-color;
+    max-width: 220px;
+    height: 70px;
+    margin: 30px auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .date-day {
+      font-size: 2.5rem;
+      margin-right: 15px;
+    }
+    .date-content {
+      text-align: left;
+      font-size: 0.875rem;
+    }
+  }
+
+  .form {
     width: 80%;
     margin: 0 auto;
-    list-style-type: none;
-    padding: 0;
-    text-align: left;
+    position: relative;
+    .input {
+      width: 100%;
+      height: 40px;
+      border: 2px solid $primary-color;
+      border-radius: 5px;
+      padding-left: 10px;
+      outline: none;
+      &::placeholder {
+        color: $primary-color;
+        opacity: 50%;
+      }
+    }
+    .add-button {
+      @extend %button;
+      position: absolute;
+      right: -14px;
+      top: 4px;
+      font-size: 1.25rem;
+      background-color: $add-button-color;
+    }
   }
-  .list-element {
-    margin: 10px auto;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 10px 5px;
-    cursor: pointer;
-    .list-content {
-      overflow-wrap: break-word;
-    }
-    .list-date {
-      font-size: 12px;
-    }
-    .delete-button {
-      float: right;
+
+  hr {
+    border: none;
+    border-top: 1px solid $primary-color;
+    opacity: 50%;
+    max-width: 80%;
+    margin: 20px auto;
+  }
+
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 80%;
+    text-align: left;
+    .list-element {
+      min-height: 50px;
+      border: 2px solid $primary-color;
+      background-color: #fff;
+      border-radius: 5px;
+      margin: 10px auto;
+      padding: 0 10px;
+      outline: none;
+      cursor: pointer;
+      .list-content {
+        line-height: 50px;
+        word-wrap: break-word;
+      }
+      .delete-button {
+        @extend %button;
+        float: right;
+        font-size: 0.8rem;
+        background-color: $delete-button-color;
+        position: relative;
+        left: 26px;
+        top: 8px;
+      }
     }
   }
 }
 
 .description {
-  margin-top: 30px;
-  font-size: 0.7rem;
-  color: rgba(0, 0, 0, 30%);
+  text-align: center;
+  color: $primary-color;
+  margin: 40px auto;
+  text-decoration: none;
+  & > a {
+    color: $primary-color;
+    font-weight: 900;
+    text-decoration: none;
+  }
 }
 
 .crossed {
   color: rgba(0, 0, 0, 0.5);
   text-decoration: line-through;
+  opacity: 50%;
 }
