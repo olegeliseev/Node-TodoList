@@ -105,4 +105,9 @@ app.route("/api/todos/:todoId")
 })
 
 
-app.listen(3000, () => console.log("SERVER RUNNING"));
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port, () => console.log("SERVER RUNNING"));
+

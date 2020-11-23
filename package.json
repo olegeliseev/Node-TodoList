@@ -12,6 +12,9 @@
   },
   "author": "Oleg Eliseev",
   "license": "ISC",
+  "engines": {
+    "node": "12.18.3"
+  },
   "bugs": {
     "url": "https://github.com/olegeliseev/Todo-List/issues"
   },
