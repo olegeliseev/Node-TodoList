@@ -13,7 +13,7 @@ app.use(express.static(__dirname + '/views'));
 
 mongoose.set("debug", true);
 mongoose.Promise = Promise; //Позволяет использовать промисы с методами монго
-mongoose.connect("mongodb://localhost:27017/node-todo", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb+srv://user:test123@node-todolist.l6ndq.mongodb.net/node-todo", { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("MONGO CONNECTION OPEN")
     })
