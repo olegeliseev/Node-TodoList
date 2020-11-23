@@ -9,7 +9,6 @@ body {
   margin: 0;
   padding-top: 40px;
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
   background: linear-gradient($background-color, transparent);
   background-repeat: no-repeat;
 }
@@ -121,7 +120,7 @@ body {
       .delete-button {
         @extend %button;
         float: right;
-        font-size: 0.8rem;
+        font-size: 0.6rem;
         background-color: $delete-button-color;
         position: relative;
         left: 26px;
